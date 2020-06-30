@@ -1,15 +1,16 @@
-package classTests.day1.activities;
+package classTests.day1;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Activity {
-
+public class FindByTest {
     private WebDriver driver;
-    private String url = "https://www.google.com/";
+    private String url = "https://kristinek.github.io/site/examples/locators";
 
     @Before
     public void setDriver() {
@@ -20,9 +21,11 @@ public class Activity {
     }
 
     @Test
-    public void driverTest(){
-        driver.get(url);
-        System.out.println(driver.getCurrentUrl());
+    public void findBy() {
+        WebElement textunbelievable = driver.findElement(By.className("text unbelievable"));
+
+        WebElement buttonOne = driver.findElement(By.xpath("//input[@value='This is a button']"));
+
     }
 
     @After
