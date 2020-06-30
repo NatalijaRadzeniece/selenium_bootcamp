@@ -3,11 +3,13 @@ package classTests.day1.activities;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Activity2 {
-    WebDriver driver;
+    private WebDriver driver;
 
     @Before
     public void setDriver() {
@@ -23,11 +25,19 @@ public class Activity2 {
     public void practiceWithWebElement() {
 
         //find element "Chapter 1" and  click on it
-        // clear text from text box
-        //  and send text to same text box
+        WebElement chapterOne = driver.findElement(By.xpath("/html/body/div[2]/ul/li[1]/a"));
+        chapterOne.click();
 
+        // clear text from text box
+        WebElement textBox = driver.findElement(By.id("html5div"));
+        textBox.clear();
+        textBox.sendKeys("Hello world");
+        //  and send text to same text box
+        System.out.println(driver.findElement(By.id("multiplewindow")).getText());
         //from element "Click this link to launch another window" print out text
+        System.out.println(driver.findElement(By.id("verifybutton")).getAttribute("value"));
         //from "Verify button" get attribute ( any you like) and print out
+        System.out.println(driver.findElement(By.className("mainheading")).getCssValue("color"));
         //from header " Selenium: Beginners Guide" get cssValue color also print out it
 
 
@@ -35,6 +45,7 @@ public class Activity2 {
 
     @After
     public void closeBrowser() {
+
         driver.quit();
     }
 
