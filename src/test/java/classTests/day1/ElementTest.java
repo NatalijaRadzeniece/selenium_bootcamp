@@ -1,17 +1,17 @@
-package samplesPages;
+package classTests.day1;
 
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-public class Activity1 {
+public class ElementTest {
 
     WebDriver driver;
-    private String url = "http://automationpractice.com/index.php";
+
     @BeforeClass
     public void setDriver() {
         String userdirLib =  System.getProperty("user.dir") + "\\lib\\";
@@ -22,16 +22,17 @@ public class Activity1 {
 
 
     @Test
-    public void findElements() {
+    public void findBy() {
+        driver.get("https://kristinek.github.io/site/examples/actions");
+        WebElement inputText = driver.findElement(By.id("text"));
+        inputText.clear();
+        inputText.sendKeys("Hello world!");
 
-        //find element "Search field"
-        WebElement searchField = driver.findElement(By.xpath("//input[@name='search_query']"));
+        WebElement resultButton = driver.findElement(By.id("result_button_text"));
+        resultButton.click();
 
-        //find element "magnifier glass"
-        WebElement magnifier = driver.findElement(By.xpath("//button[@name='submit_search']"));
-
-        // find element in menu "Woman"
-        WebElement menuWoman = driver.findElement(By.xpath("//a[@title='Women']"));
+        WebElement checkBox1 = driver.findElement(By.cssSelector("[id='vfb-6-0']"));
+        checkBox1.click();
     }
 
     @AfterClass
