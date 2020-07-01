@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,7 +20,7 @@ public class BaseFunc {
     public BaseFunc(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, 70);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public void acceptAlert() {
@@ -41,6 +42,10 @@ public class BaseFunc {
         select = new Select(element);
         select.selectByVisibleText(optionName);
     }
+
+//    public void waitForElementToBeClickable(WebElement element, String expectedText) {
+//        wait.until(ExpectedConditions.textToBePresentInElement(element, expectedText));
+//    }
 
 
 }
