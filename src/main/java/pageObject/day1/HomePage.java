@@ -12,7 +12,7 @@ public class HomePage extends BaseFunc {
         super(driver);
     }
     @FindBy(how = How.LINK_TEXT, using = "Chapter1")
-    private WebElement chapter1;
+    public WebElement chapter1;
 
     public void clickChapter1(){
         chapter1.click();

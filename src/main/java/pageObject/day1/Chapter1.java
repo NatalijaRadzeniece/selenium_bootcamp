@@ -1,7 +1,6 @@
 package pageObject.day1;
 
 import core.BaseFunc;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,22 +24,35 @@ public class Chapter1 extends BaseFunc {
     @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement mainheading;
 
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
+
+
     public void setTextBox(String textToSend) {
         textBox.clear();
         textBox.sendKeys(textToSend);
     }
 
-    public void getTextOfWindowLink() {
-        String text = windowlink.getText();
-        System.out.println(text);
+    public String getTextOfTextBox() {
+        String text = textBox.getText();
+        return text;
     }
-    public void getAttributeverifybutton() {
+
+    public String getTextOfWindowLink() {
+        String text = windowlink.getText();
+        return text;
+    }
+
+    public void getAttributeVerifyButton() {
         String value = verifybutton.getAttribute("value");
         System.out.println(value);
     }
 
-    public void getCssValuemainheading(){
-        String cssValue = mainheading.getCssValue("color");
-        System.out.println(cssValue);
+    public String printCssValueguide() {
+        return mainheading.getCssValue("Color");
+    }
+
+    public void selectFromSelectTypeDD(String optionName) {
+        selectByVisibleText(selectTypeDD, optionName);
     }
 }
