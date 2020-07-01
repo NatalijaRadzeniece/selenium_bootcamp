@@ -11,33 +11,49 @@ public class ChapterOnePage extends BaseFunc {
     public ChapterOnePage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(how= How.ID, using = "html5div") //to all elementsx4
+
+    @FindBy(how = How.ID, using = "html5div") //to all elementsx4
     private WebElement textBox;
 
-    @FindBy(how= How.ID, using = "multiplewindow" )
+    @FindBy(how = How.ID, using = "multiplewindow")
     private WebElement windowLink;
 
     @FindBy(how = How.ID, using = "verifybutton")
     private WebElement verifyButton;
 
-    @FindBy(how = How.CLASS_NAME, using= "mainheading")
+    @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement beginnersGuide;
 
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
 
-    public void setTextBox (String textToSend){
+    public void setTextBox(String textToSend) {
         textBox.clear();
         textBox.sendKeys(textToSend);
 
     }
-    public void getTextOfWindowLink(){
+
+    public String getTextOfTextBox() {
+        return textBox.getText();
+    }
+
+    public void getTextOfWindowLink() {
         String text = windowLink.getText();
         System.out.println(text);
     }
 
-    public void printAttributeVerifyButton(){
+    public void printAttributeVerifyButton() {
         System.out.println(beginnersGuide.getCssValue("value"));
     }
-    public void printCssValueguide(){
+
+    public void printCssValueguide() {
+
         System.out.println(beginnersGuide.getCssValue("color"));
     }
+
+
+    public void selectFromSelectTypeDD(String optionName) {
+        selectByVisibleText(selectTypeDD, optionName);
+    }
+
 }
