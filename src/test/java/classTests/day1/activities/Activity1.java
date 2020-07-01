@@ -25,14 +25,15 @@
 //    public void finElements() {
 //
 //        //find element "Search field"
-//        WebElement searchField = ;
+//        WebElement searchField = driver.findElement(By.id("search_query_top"));
 //
 //        //find element "magnifier glass"
-//        WebElement magnifier = ;
+//        WebElement magnifier = driver.findElement(By.name("submit_search"));
 //
 //        // find element in menu "Woman"
-//        WebElement menuWoman = ;
-//
+//        WebElement menuWoman = driver.findElement(By.linkText("Women")) ;
+//        driver.findElement(By.xpath("//a[@title='Women']"));
+//        driver.findElement(By.cssSelector("a[title='Women']"));
 //    }
 //
 //    @AfterClass

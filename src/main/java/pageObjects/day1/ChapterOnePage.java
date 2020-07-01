@@ -12,7 +12,7 @@ public class ChapterOnePage extends BaseFunc {
         super(driver);
     }
 
-    @FindBy(how= How.ID, using = "html5div")
+    @FindBy(how = How.ID, using = "html5div")
     private WebElement textBox;
 
     @FindBy(how = How.ID, using = "multiplewindow")
@@ -23,28 +23,40 @@ public class ChapterOnePage extends BaseFunc {
 
     @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement beginnersGuide;
+    //day2
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
+//day2 end
 
-
-    public void setTextBox(String textToSend){
+    public void setTextBox(String textToSend) {
         textBox.clear();
         textBox.sendKeys(textToSend);
     }
 
-    public String getTextOfWindowLink(){
+    //day2 select from DD
+    public String getTextOfTextBox() {
+        return textBox.getText();
+    }
+
+    //day2 end
+
+    public String getTextOfWindowLink() {
         String text = windowLink.getText();
         return text;
     }
 
 
-    public void printAttributeVerifyButton(){
+    public void printAttributeVerifyButton() {
         System.out.println(verifyButton.getAttribute("value"));
     }
 
-    public void printCssValueguide(){
-        System.out.println(beginnersGuide.getCssValue("color"));
+    public String printCssValueguide() {
+//        System.out.println(beginnersGuide.getCssValue("color"));
+        return beginnersGuide.getCssValue("color");
     }
-
-
-
-
+    //day2 select from DD
+    public void selectFromSelectTypeDD(String optionName){
+        selectByVisibletext(selectTypeDD, optionName );
+     //day2 end
+    }
 }
