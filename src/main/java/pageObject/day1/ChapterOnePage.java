@@ -23,26 +23,35 @@ public class ChapterOnePage extends BaseFunc {
     private WebElement getAttribute;
 
     @FindBy(how = How.CLASS_NAME, using = "mainheading")
-    private  WebElement getCssValue;
+    private WebElement getCssValue;
+
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
 
 
-    public void setTextBox(String textToSend){
+    public void setTextBox(String textToSend) {
         textBox.clear();
         textBox.sendKeys(textToSend);
     }
 
-    public void getTextOfWindowLink(){
-        String text = textElement.getText();
-        System.out.println(text);
+    public String getTextOfTextBox() {
+        return textBox.getText();
     }
 
-    public void getAttribute(){
+    public String getTextOfWindowLink() {
+        return textElement.getText();
+    }
+
+    public void getAttribute() {
         String value = getAttribute.getAttribute("value");
         System.out.println(value);
     }
 
-    public void getCssValue(){
-        String color = getCssValue.getCssValue("color");
-        System.out.println(color);
+    public String getCssValue() {
+        return getCssValue.getCssValue("color");
+    }
+
+    public void selectFromSelectTypeDD(String optionName) {
+        selectByVisibleText(selectTypeDD, optionName);
     }
 }

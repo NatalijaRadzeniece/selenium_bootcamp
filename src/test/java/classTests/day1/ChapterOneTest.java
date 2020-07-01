@@ -1,6 +1,7 @@
 package classTests.day1;
 
 import baseWebTest.BaseWebTest;
+import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.day1.ChapterOnePage;
@@ -9,20 +10,33 @@ import pageObject.day1.HomePage;
 public class ChapterOneTest extends BaseWebTest {
 
     @BeforeClass
-    public void navigateTo(){
+    public void navigateTo() {
         navigateTo("http://book.theautomatedtester.co.uk/");
     }
 
     @Test
-    public void chapterOneTest(){
+    public void chapterOneTest() {
         HomePage homePage = new HomePage(driver);
+
+        Assertions.assertTrue(homePage.chapter1.isDisplayed(), "Chapter1 is not displayed");
         homePage.clickChapterOne();
 
         ChapterOnePage chapterPage = new ChapterOnePage(driver);
 
         chapterPage.setTextBox("New Text");
+        Assertions.assertEquals("New Text", chapterPage.getTextOfTextBox(), "Text not the same");
+
+        chapterPage.selectFromSelectTypeDD("Selenium IDE");
+
+
         chapterPage.getTextOfWindowLink();
+        Assertions.assertNotNull(chapterPage.getTextOfWindowLink(), "There is no text");
+
         chapterPage.getAttribute();
+
         chapterPage.getCssValue();
+        Assertions.assertNotEquals("yellow", chapterPage.getCssValue(), "There should be the yellow color");
+
+
     }
 }

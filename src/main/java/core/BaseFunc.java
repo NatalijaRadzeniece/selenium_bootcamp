@@ -2,7 +2,9 @@ package core;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -12,6 +14,7 @@ public class BaseFunc {
     private WebDriver driver;
     private WebDriverWait wait;
     private Alert alert;
+    private Select select;
 
     public BaseFunc(WebDriver driver) {
         this.driver = driver;
@@ -33,5 +36,11 @@ public class BaseFunc {
         alert = driver.switchTo().alert();
         alert.sendKeys("Meow");
     }
+
+    public void selectByVisibleText(WebElement element, String optionName) {
+        select = new Select(element);
+        select.selectByVisibleText(optionName);
+    }
+
 
 }
