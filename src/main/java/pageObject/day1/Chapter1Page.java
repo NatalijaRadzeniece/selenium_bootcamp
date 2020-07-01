@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.w3c.dom.css.CSSValue;
-
-import javax.management.Attribute;
 
 public class Chapter1Page extends BaseFunc {
 
@@ -16,20 +13,27 @@ public class Chapter1Page extends BaseFunc {
     }
 
     @FindBy(how = How.CLASS_NAME, using = "belowcenter")
-    private WebElement textBox;
+    public WebElement textBox;
 
     @FindBy(how = How.CLASS_NAME, using = "multiplewindow")
-    private WebElement clickLinkLaunch;
+    public WebElement clickLinkLaunch;
 
     @FindBy(how = How.ID, using = "divinthecenter")
-    private WebElement verifyButton;
+    public WebElement verifyButton;
 
     @FindBy(how = How.CLASS_NAME, using = "mainheading")
-    private WebElement beginnersGuide;
+    public WebElement beginnersGuide;
+
+    @FindBy(how = How.CSS, using ="[id='selecttype']")
+    private WebElement selectTypeDD;
 
     public void setTextBox(String textToSend) {
         textBox.clear();
         textBox.sendKeys(textToSend);
+    }
+
+    public String getTextOfTextBox(){
+        return textBox.getText();
     }
 
     public void getClickLinkLaunchlinText(){
@@ -37,12 +41,15 @@ public class Chapter1Page extends BaseFunc {
         System.out.println(text);
     }
 
-    public void getButtonVerifyAttribute() {
+    public void printButtonVerifyAttribute() {
         System.out.println(verifyButton.getAttribute("size"));
     }
 
-    public void BeginnersGuidecssValuePrint() {
+    public void printBeginnersGuidecssValuePrint() {
         System.out.println(beginnersGuide.getCssValue("color"));
     }
+    public void selectFromSelectTypeDD(String optionName) {
+        selectByVisibleText(selectTypeDD, optionName);
+    }
 
-}
+    }
