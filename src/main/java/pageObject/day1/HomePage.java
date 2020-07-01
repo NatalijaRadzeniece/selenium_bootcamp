@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class HomePage extends BaseFunc {
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -15,7 +16,7 @@ public class HomePage extends BaseFunc {
     public WebElement chapterOne;
 
 
-    public void clickChapterOne(){
+    public void clickChapterOne() {
         chapterOne.click();
     }
 }

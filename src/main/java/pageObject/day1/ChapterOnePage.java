@@ -22,19 +22,30 @@ public class ChapterOnePage extends BaseFunc {
     @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement beginnersGuide;
 
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
 
 public void setTextBox(String textToSend){
     textBox.clear();
     textBox.sendKeys(textToSend);
 }
-public void getTextOfWindowLink(){
+
+public String getTextOfTextBox(){
+    return textBox.getText();
+}
+
+public String getTextOfWindowLink(){
     String text = windowLink.getText();
-    System.out.println(text);
+    return text;
 }
     public void printAttributeVerifyButton(){
     System.out.println(verifyButton.getAttribute("value"));
     }
-    public void printCssValueguide() {
-        System.out.println(beginnersGuide.getCssValue("color"));
+    public String printCssValueguide() {
+        return beginnersGuide.getCssValue("color");
+    }
+
+    public void selectFromSelectTypeDD(String optionName){
+    selectByVisibleText(selectTypeDD, optionName);
     }
 }
