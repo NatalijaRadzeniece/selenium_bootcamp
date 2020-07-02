@@ -3,7 +3,7 @@ package classTests.day2;
 import baseWebTest.BaseWebTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObject.day2.DelfiHomePage;
+import pageObject.day3.DelfiHomePage;
 
 public class DelfiTest extends BaseWebTest {
     @BeforeClass
