@@ -52,7 +52,7 @@ public class StoreTest extends BaseWebTest {
         double sumPrice = (double) Math.round((price1 + price2 + price3) * 100000d) / 100000d;
 
         Assertions.assertEquals(sumPrice, allPrice, "Price not the same");
-        Assertions.assertEquals(3, nameList.size(), "Wrong count of elements");
+        Assertions.assertEquals(2, nameList.size(), "Wrong count of elements");
         Assertions.assertTrue(nameList.contains(shirtName), "Checkout do not contain shirt");
         Assertions.assertTrue(nameList.contains(blouseName), "Checkout do not contain blouse");
     }
