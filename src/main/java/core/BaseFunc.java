@@ -12,10 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 // This is Parent PageObject class should contains common methods which will be used for many PageObjects to prevent code duplication.
 public class BaseFunc {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private Alert alert;
-    private Select select;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+    protected Alert alert;
+    protected Select select;
 
     public BaseFunc(WebDriver driver) {
         this.driver = driver;
@@ -46,5 +46,9 @@ public class BaseFunc {
 
     public void waitForElementToBeClickable(WebElement element, String expectedText){
         wait.until(ExpectedConditions.textToBePresentInElement(element, expectedText));
+    }
+
+    public void waitElementAppeared(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }
