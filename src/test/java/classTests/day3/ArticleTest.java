@@ -9,6 +9,7 @@ import pageObject.day2.DelfiHomePage;
 import pageObject.day3.DelfiArticlePage;
 
 public class ArticleTest extends BaseWebTest {
+
     @BeforeClass
     public void navigateTo() {
         navigateTo("https://www.delfi.lv/");

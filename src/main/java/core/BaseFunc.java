@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 
 // This is Parent PageObject class should contains common methods which will be used for many PageObjects to prevent code duplication.
 public class BaseFunc {
@@ -47,5 +49,8 @@ public class BaseFunc {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void waitAllElementsAppeared(List<WebElement> elements){
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
 
 }
