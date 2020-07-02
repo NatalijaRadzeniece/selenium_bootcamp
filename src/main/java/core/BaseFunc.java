@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 
 // This is Parent PageObject class should contains common methods which will be used for many PageObjects to prevent code duplication.
 public class BaseFunc {
@@ -42,6 +44,10 @@ public class BaseFunc {
     public void selectByVisibletext(WebElement element, String optionName){
         select = new Select(element);
         select.selectByVisibleText(optionName);
+    }
+
+    public void waitForTheListOfElements(List<WebElement> lists){
+        wait.until(ExpectedConditions.visibilityOfAllElements(lists));
     }
     // cant read file on input field
 //    public void waitForElementToBeClickable(WebElement element, String expectedText){
