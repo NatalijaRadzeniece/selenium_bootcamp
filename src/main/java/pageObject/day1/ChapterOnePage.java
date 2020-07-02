@@ -12,34 +12,46 @@ public class ChapterOnePage extends BaseFunc {
         super(driver);
     }
 
-    @FindBy(how= How.ID, using = "html5div")
+    @FindBy(how = How.ID, using = "html5div")
     private WebElement textBox;
 
-    @FindBy(how= How.ID, using = "multiplewindow")
+    @FindBy(how = How.ID, using = "multiplewindow")
     private WebElement windowLink;
 
-    @FindBy(how= How.ID, using = "verifybutton")
+    @FindBy(how = How.ID, using = "verifybutton")
     private WebElement verifyButton;
 
-    @FindBy(how= How.CLASS_NAME, using = "mainheading")
+    @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement beginnersGuide;
 
-    public void setTextBox(String textToSend){
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
+
+    public void setTextBox(String textToSend) {
         textBox.clear();
-        textBox.sendKeys("");
+        textBox.sendKeys(textToSend);
 
     }
 
-    public void getTextOfWindowLink() {
+    public String getTextOfTextBox() {
+        String text = textBox.getText();
+        return text;
+    }
+
+    public String getTextOfWindowLink() {
         String text = windowLink.getText();
-        System.out.println(text);
+        return text;
     }
-    public void getAttributeOfVerifyButton() {
-        String value = verifyButton.getAttribute("value");
-        System.out.println(value);
-    }
-     public void getCssValueOfguide(){
-         System.out.println(beginnersGuide.getCssValue("colour"));
 
+    public void printAttributeVerifyButton() {
+         System.out.println(verifyButton.getAttribute("value"));
+    }
+
+    public String getCssValueOfguide() {
+        return beginnersGuide.getCssValue("color");
+    }
+
+    public void setSelectTypeDD(String optionName) {
+        selectByVisibleText(selectTypeDD, optionName);
     }
 }

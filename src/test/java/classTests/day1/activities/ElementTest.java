@@ -1,5 +1,7 @@
 package classTests.day1.activities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,12 +13,14 @@ import org.testng.annotations.Test;
 public class ElementTest {
 
     WebDriver driver;
+    final Logger LOGGER = LogManager.getLogger(ElementTest.class);
 
     @BeforeClass
     public void setDriver() {
         String userdirLib =  System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", userdirLib + "chromedriver.exe");
         driver = new ChromeDriver();
+        LOGGER.info("Browser window");
         driver.manage().window().maximize();
     }
 
