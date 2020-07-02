@@ -16,7 +16,8 @@ public class DelfiHomePageTest extends BaseWebTest {
         DelfiHomePage delfiHomePage = new DelfiHomePage(driver);
 
 //        delfiHomePage.selectMenuItem("Ārzemēs");
-        delfiHomePage.clickArticle(4);
+//        delfiHomePage.clickArticle(4);
+
     }
 
 }

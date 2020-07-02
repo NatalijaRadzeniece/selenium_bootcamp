@@ -43,9 +43,9 @@ public class BaseFunc {
         select.selectByVisibleText(optionName);
     }
 
-//    public void waitForElementToBeClickable(WebElement element, String expectedText) {
-//        wait.until(ExpectedConditions.textToBePresentInElement(element, expectedText));
-//    }
+    public void waitElementAppeared(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
 
 
 }

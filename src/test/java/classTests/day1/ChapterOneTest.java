@@ -1,6 +1,8 @@
 package classTests.day1;
 
 import baseWebTest.BaseWebTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -8,6 +10,7 @@ import pageObject.day1.ChapterOnePage;
 import pageObject.day1.HomePage;
 
 public class ChapterOneTest extends BaseWebTest {
+    final Logger LOGGER = LogManager.getLogger(ChapterOneTest.class);
 
     @BeforeClass
     public void navigateTo() {
@@ -16,6 +19,7 @@ public class ChapterOneTest extends BaseWebTest {
 
     @Test
     public void chapterOneTest() {
+        LOGGER.info("Initializing Home Page");
         HomePage homePage = new HomePage(driver);
 
         Assertions.assertTrue(homePage.chapter1.isDisplayed(), "Chapter1 is not displayed");
