@@ -49,4 +49,10 @@ public class BaseFunc {
 
     }
 
+    public void waitElementAppeared(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+
+
 }

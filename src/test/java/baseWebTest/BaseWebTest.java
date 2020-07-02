@@ -21,7 +21,7 @@ public class BaseWebTest {
         //initializing driver
         this.driver = new ChromeDriver();
         // maximizing browser window
-        this.driver.manage().window().maximize();
+        //this.driver.manage().window().maximize();
     }
 
     public void navigateTo(String url) {
