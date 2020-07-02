@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.util.concurrent.TimeUnit;
+
 // Base Test class where driver methods and set up located
 public class BaseWebTest {
 
@@ -22,6 +24,7 @@ public class BaseWebTest {
         this.driver = new ChromeDriver();
         // maximizing browser window
         this.driver.manage().window().maximize();
+        this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     public void navigateTo(String url) {

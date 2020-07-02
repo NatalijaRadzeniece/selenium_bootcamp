@@ -1,5 +1,7 @@
 package classTests.day1.activities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
     public class ElementTest {
 
         private WebDriver driver;
+        final Logger LOGGER = LogManager.getLogger(ElementTest.class);
         private String url = "https://kristinek.github.io/site/examples/actions";
 
         @Before
@@ -20,12 +23,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
             String userdirLib = System.getProperty("user.dir") + "\\lib\\";
             System.setProperty("webdriver.chrome.driver", userdirLib + "chromedriver.exe");
             driver = new ChromeDriver();
+            LOGGER.info("Browser Window maximize");
             driver.manage().window().maximize();
 
         }
 
         @Test
         public void findBy() {
+
+            LOGGER.info("Navigate to");
         driver.get(url);
 
         WebElement inputText = driver.findElement(By.id("text"));

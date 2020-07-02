@@ -2,16 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29068af1-abeb-4e18-bd9e-299f0a274c58" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObject/Day3/ClothesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObject/Day3/DelfiArticlePageSolo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/classTests/Day3/ArticleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/classTests/Day3/ClothesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selenium_bootcamp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_bootcamp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseFunc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/day1/ChapterOnePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/day1/ChapterOnePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/day1/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/day1/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/classTests/day1/activities/ChapterOneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/classTests/day1/activities/ChapterOneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObject/Day2/DelfiHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObject/Day2/DelfiHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/baseWebTest/BaseWebTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseWebTest/BaseWebTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/classTests/day1/activities/ElementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/classTests/day1/activities/ElementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/classTests/day2/AlertTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/classTests/day2/AlertTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,7 +39,107 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="TestNG.ClothesTest">
+    <configuration name="ElementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="classTests.day1.activities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.day1.activities" />
+      <option name="MAIN_CLASS_NAME" value="classTests.day1.activities.ElementTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlertTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="classTests.day2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.day2" />
+      <option name="MAIN_CLASS_NAME" value="classTests.day2.AlertTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="classTests.Day3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.Day3" />
+      <option name="MAIN_CLASS_NAME" value="classTests.Day3.ArticleTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClothesTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="classTests.Day3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.Day3" />
+      <option name="MAIN_CLASS_NAME" value="classTests.Day3.ClothesTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClothesTest.checkingClothes" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="classTests.Day3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.Day3" />
+      <option name="MAIN_CLASS_NAME" value="classTests.Day3.ClothesTest" />
+      <option name="METHOD_NAME" value="checkingClothes" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.ClothesTest" />
+        <item itemvalue="TestNG.ClothesTest.checkingClothes" />
+        <item itemvalue="TestNG.ArticleTest" />
+        <item itemvalue="TestNG.AlertTest" />
+        <item itemvalue="JUnit.ElementTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -37,5 +153,60 @@
       <updated>1593620367751</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1593710157829">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593710157829" />
+    <state width="1877" height="286" key="GridCell.Tab.0.bottom" timestamp="1593723559080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593723559080" />
+    <state width="1877" height="286" key="GridCell.Tab.0.center" timestamp="1593723559080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593723559080" />
+    <state width="1877" height="286" key="GridCell.Tab.0.left" timestamp="1593723559080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593723559080" />
+    <state width="1877" height="286" key="GridCell.Tab.0.right" timestamp="1593723559080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593723559080" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1593712486547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593712486547" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1593712486547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593712486547" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1593712486547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593712486547" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1593712486547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593712486547" />
+    <state x="457" y="132" key="SettingsEditor" timestamp="1593678638818">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="457" y="132" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593678638818" />
+    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1593723501994">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593723501994" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="selenium_bootcamp" type="b2602c69:ProjectViewProjectNode" />
+        <item name="selenium_bootcamp" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
 </project>
