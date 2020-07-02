@@ -20,7 +20,7 @@ public class ExplicitWaitSample  {
     private List<WebElement> listOfElements;
 
     // Initializing wait, adding driver and also time in seconds
-    WebDriverWait wait = new WebDriverWait(driver,50);
+    WebDriverWait wait = new WebDriverWait(driver,50); //usuallu10-0 sec wait, not 50
 
     //Until clickable -wait until the element is clickable by the locator or by WebElement.
     public void waitUntilClickableLocator(){
