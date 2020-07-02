@@ -13,12 +13,12 @@ public class UploadPage extends BaseFunc {
         super(driver);
     }
 
-    String path =System.getProperty("user.dir")+ "\\src\\resources\\test_document_uploading.docx";
+    String path = System.getProperty("user.dir") + "\\src\\resources\\test_document_uploading.docx";
 
     @FindBy(how = How.CSS, using = "[type='file']")
     private WebElement fileInput;
 
-    public void sendFile(){
+    public void sendFile() {
         fileInput.sendKeys(path);
 
 

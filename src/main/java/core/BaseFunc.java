@@ -23,7 +23,7 @@ public class BaseFunc {
     public BaseFunc(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 15);
     }
 
     public void acceptAlert() {
@@ -49,6 +49,10 @@ public class BaseFunc {
     public void waitForTheListOfElements(List<WebElement> lists){
         wait.until(ExpectedConditions.visibilityOfAllElements(lists));
     }
+    public void waitForTheWebElement(WebElement element){
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+    }
+
     // cant read file on input field
 //    public void waitForElementToBeClickable(WebElement element, String expectedText){
 //        wait.until(ExpectedConditions.textToBePresentInElement(element,expectedText));

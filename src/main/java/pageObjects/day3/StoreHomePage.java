@@ -13,13 +13,12 @@ public class StoreHomePage extends BaseFunc {
         super(driver);
     }
 
-    @FindBy (how = How.XPATH, using = "//a[@title='Women']")
+    @FindBy(how = How.XPATH, using = "//a[@title='Women']")
     private WebElement buttonWomen;
 
-    public void clickOnButtonWoman(){
+    public void clickOnButtonWoman() {
         buttonWomen.click();
     }
-
 
 
 }
