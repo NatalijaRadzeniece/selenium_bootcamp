@@ -53,5 +53,8 @@ public class BaseFunc {
     public void waitForTheListOfElements(List<WebElement> elements){
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
+    public void waitForTheElement(WebElement element){
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+    }
 
 }

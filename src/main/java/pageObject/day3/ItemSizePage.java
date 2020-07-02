@@ -17,7 +17,7 @@ public class ItemSizePage extends BaseFunc {
     @FindBy(how = How.XPATH, using = "//option[@title='M']")
     private WebElement mySize;
 
-    @FindBy(how = How.XPATH, using = "//button[@name='Submit']")
+    @FindBy(how = How.ID, using = "add_to_cart")
     private WebElement addToCart;
 
     @FindBy(how = How.CLASS_NAME, using = "continue btn btn-default button exclusive-medium")
@@ -30,7 +30,12 @@ public class ItemSizePage extends BaseFunc {
 
     public void clickSelectedSize(){mySize.click();}
 
-    public void clickAddToCart(){addToCart.click();}
+
+
+    public void clickAddToCart(){
+        waitForTheElement (addToCart);
+        addToCart.click();}
+
 
     public void clickContinueShopping(){continueShopping.click();}
 

@@ -19,10 +19,10 @@ public class ItemPage extends BaseFunc {
     Item item;
 
 
-    @FindBy(how = How.XPATH, using = "//div[@class='product-image-container']")
+    @FindBy(how = How.XPATH, using = "//a[@class='product-name']")
     private List<WebElement> items;
 
-    public void clickItem(int i) {
+    public void clickItemOne(int i) {
         waitForTheListOfElements(items);
 
         items.get(i).click();
@@ -31,7 +31,7 @@ public class ItemPage extends BaseFunc {
     public Item getMyItem(Integer i) {
         Item myItem = new Item();
         WebElement item = items.get(i);
-        List<WebElement> myItems = item.findElements(By.xpath(".//a[text()='Blouse']"));
+        List<WebElement> myItems = item.findElements(By.(".//a[text()='Blouse']"));
         item.click();
         return myItem;
     }
