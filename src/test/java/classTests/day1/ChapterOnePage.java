@@ -11,23 +11,30 @@ public class ChapterOnePage extends BaseFunc {
         super(driver);
     }
 
-    @FindBy(how = How.XPATH, using = "Chapter1")
+    @FindBy(how = How.LINK_TEXT, using = "Chapter1")
     private WebElement chapter1Element;
-    @FindBy(how = How.XPATH, using = "html5div")
+    @FindBy(how = How.ID, using = "html5div")
     private WebElement textBox;
-    @FindBy(how = How.XPATH, using = "multiplewindow")
+    @FindBy(how = How.ID, using = "multiplewindow")
     private WebElement link1;
-    @FindBy(how = How.XPATH, using = "verifybutton")
+    @FindBy(how = How.ID, using = "verifybutton")
     private WebElement verifyButton;
-    @FindBy(how = How.XPATH, using = "mainheading")
+    @FindBy(how = How.CLASS_NAME, using = "mainheading")
     private WebElement mainHeading;
+
+    @FindBy(how = How.CSS, using = "[id='selecttype']")
+    private WebElement selectTypeDD;
+
     public void setTextBox(String textToSend){
         textBox.clear();
         textBox.sendKeys(textToSend);
     }
-    public void getTextOfWindowLink(){
-        String text = link1.getText();
-        System.out.println(text);
+
+    public String getTextOfTextBox(){
+        return textBox.getText();
+    }
+    public String getTextOfWindowLink(){
+        return link1.getText();
     }
 
     public void getAttributeOfButton(){
@@ -35,17 +42,14 @@ public class ChapterOnePage extends BaseFunc {
         System.out.println(attribute1);
 
     }
-    public void getColorOfHeading(){
-        String color = mainHeading.getCssValue("color");
-        System.out.println(color);
+    public String getColorOfHeading(){
+        return mainHeading.getCssValue("color");
+
     }
 
-
-
-
-
-
-
+    public  void selectFromSelectTypeDD(String optionName){
+        selectByVisibleText(selectTypeDD, optionName );
+    }
 
 
 }
