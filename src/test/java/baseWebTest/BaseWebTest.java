@@ -15,7 +15,7 @@ public class BaseWebTest {
     @BeforeClass
     public void setUp() {
         //instead of add whole path, we can get path by using System.getProperty
-        String userdirLib =  System.getProperty("user.dir") + "\\lib\\";
+        String userdirLib = System.getProperty("user.dir") + "\\lib\\";
         //path to driver .exe file
         System.setProperty("webdriver.chrome.driver", userdirLib + "chromedriver.exe");
         //initializing driver
@@ -37,4 +37,5 @@ public class BaseWebTest {
         Assertions.assertNotNull(driver, "Window already closed");
         driver.quit();
     }
+
 }

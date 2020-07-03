@@ -16,7 +16,7 @@ public class HomePage extends BaseFunc {
     public WebElement chapterOne;
 
 
-    public void clickChapterOne() {
+    public void clickChapterOne(){
         chapterOne.click();
     }
 }

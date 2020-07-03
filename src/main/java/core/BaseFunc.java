@@ -49,4 +49,12 @@ public class BaseFunc {
         //textToBePresentInElement(element, expectedText));
     }
 
+    public void waitElementAppeared(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitUntilInvisibilityOFElement(WebElement element){
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
 }
