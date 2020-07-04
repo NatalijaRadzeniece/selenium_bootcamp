@@ -22,7 +22,7 @@ public class Article {
     }
 
     public void setCommentNumber(String commentNumber) {
-        String clearNumber = commentNumber.substring(1,commentNumber.length()-1);
+        String clearNumber = commentNumber.substring(1, commentNumber.length() -1);
         this.commentNumber = Integer.valueOf(clearNumber);
 
         // short way, if we use it only once this.commentNumber = Integer.valueOf(commentNumber.substring(0,commentNumber.length()-1));
