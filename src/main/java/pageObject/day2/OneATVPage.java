@@ -1,28 +1,79 @@
 package pageObject.day2;
 
 import core.BaseFunc;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-
-import java.util.List;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import java.io.File;
 
 public class OneATVPage extends BaseFunc {
 
-    public OneATVPage(WebDriver driver){
+    final Logger logger = LogManager.getLogger(OneATVPage.class);
+
+    public OneATVPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@class, 'product__hover')]")
-    private List<WebElement> products;
+    public void selectOptionsAndAddToCart() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='option[218]']")));
 
-    public void printProductDetails(int i){
-        WebElement product = products.get(i);
-        String productName = product.findElement(By.xpath("//a[contains(@class, 'product__name')]")).getText();
-        String price = product.findElement(By.xpath(".//span[@class='item-price']")).getText();
-        System.out.println(productName + "\n" + price );
+        logger.info("Setting Radio value to Medium (+$24.00)");
+        driver.findElement(By.xpath("//div[@id='input-option218']//input[@value=\"6\"]")).click();
 
+        logger.info("Setting Checkbox value to Checkbox 3 (+$36.00)");
+        driver.findElement(By.xpath("//div[@id='input-option223']//input[@value=10]")).click();
+
+        logger.info("Setting Text");
+        WebElement text = driver.findElement(By.xpath("//div[label[text()='Text']]/input"));
+        text.clear();
+        text.sendKeys("The big brown fox jumps over the lazy dog");
+
+        logger.info("Setting Color");
+        WebElement colorElement = driver.findElement(By.id("input-option217"));
+        Select colorSelect = new Select(colorElement);
+        colorSelect.selectByVisibleText("Blue (+$3.60)");
+
+        logger.info("Setting Textarea");
+        driver.findElement(By.id("input-option209")).sendKeys("Lorem ipsum dolor sit amet");
+
+        logger.info("Selecting file and uploading");
+        File file = new File(getClass().getResource("/cartoon-unicorn-png-2.png").getFile());
+        driver.findElement(By.id("button-upload222")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type = 'file']")));
+        WebElement fileInput = driver.findElement(By.xpath("//input[@type = 'file']"));
+        fileInput.sendKeys(file.getAbsolutePath());
+
+        logger.info("Dismissing Alert");
+        wait.until(ExpectedConditions.alertIsPresent());
+        Alert fileUploadedSuccessfully = driver.switchTo().alert();
+        fileUploadedSuccessfully.dismiss();
+
+        logger.info("Setting Date");
+        WebElement date = driver.findElement(By.id("input-option219"));
+        date.clear();
+        date.sendKeys("2020-07-05");
+
+        logger.info("Setting Time");
+        WebElement time = driver.findElement(By.xpath("//div[contains(@class, 'time')]/input"));
+        time.clear();
+        time.sendKeys("17:31");
+
+        logger.info("Setting Date & Time");
+        WebElement dateAndTime = driver.findElement(By.xpath("//div[label[text()='Date & Time']]//input"));
+        dateAndTime.clear();
+        dateAndTime.sendKeys("2020-07-05 17:31");
+
+        logger.info("Setting Qty");
+        WebElement quantity = driver.findElement(By.id("input-quantity"));
+        quantity.clear();
+        quantity.sendKeys("1");
+
+        logger.info("Adding to cart");
+        driver.findElement(By.id("button-cart")).click();
     }
 }

@@ -1,6 +1,7 @@
 package pageObject.day3;
 
 import core.BaseFunc;
+import model.ProductInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,7 +37,7 @@ public class ClothesWomenPage extends BaseFunc {
         WebElement priceSpan = container.findElement(By.cssSelector("div.right-block > div > span.price.product-price"));
         productInfo.price = Float.parseFloat(priceSpan.getText().substring(1));
 
-        WebElement titleAnchor = container.findElement(By.xpath("//div[@class='right-block']/h5/a"));
+        WebElement titleAnchor = container.findElement(By.xpath(".//div[@class='right-block']/h5/a"));
         productInfo.title = titleAnchor.getText();
 
         Actions actions = new Actions(driver);

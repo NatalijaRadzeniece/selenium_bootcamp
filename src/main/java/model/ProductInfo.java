@@ -1,4 +1,4 @@
-package pageObject.day3;
+package model;
 
 public class ProductInfo {
     public String title;

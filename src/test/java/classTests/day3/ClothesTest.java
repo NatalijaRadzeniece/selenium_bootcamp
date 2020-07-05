@@ -1,17 +1,19 @@
 package classTests.day3;
 
 import baseWebTest.BaseWebTest;
+import model.ProductInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.day3.ClothesCartPage;
 import pageObject.day3.ClothesMainPage;
 import pageObject.day3.ClothesWomenPage;
-import pageObject.day3.ProductInfo;
 
 public class ClothesTest extends BaseWebTest {
     final Logger logger = LogManager.getLogger(ClothesTest.class);
+    final int[] productIndex = new int[]{4, 5};
 
     @BeforeClass
     public void navigateTo() {
@@ -19,7 +21,7 @@ public class ClothesTest extends BaseWebTest {
     }
 
     @Test
-    public void clickWomen() throws InterruptedException {
+    public void doAllTheJob() {
         logger.info("Initializing Home page");
         ClothesMainPage clothesMainPage = new ClothesMainPage(driver);
 
@@ -31,20 +33,21 @@ public class ClothesTest extends BaseWebTest {
         clothesWomenPage.waitUntilLoaded();
 
         logger.info("Adding products to cart");
-        ProductInfo pi1 = clothesWomenPage.addToCart(4);
-        ProductInfo pi2 = clothesWomenPage.addToCart(5);
+        ProductInfo[] piWomen = new ProductInfo[productIndex.length];
+
+        for (int i = 0; i < productIndex.length; i++) {
+            piWomen[i] = clothesWomenPage.addToCart(productIndex[i]);
+        }
 
         clothesWomenPage.goToCart();
 
-        logger.info("BlaBla");
+        logger.info("Counting products in cart");
         ClothesCartPage clothesCartPage = new ClothesCartPage(driver);
 
-        clothesCartPage.getProductInfo(1);
-
-        Thread.sleep(5000);
-
-
+        for (int i = 0; i < productIndex.length; i++) {
+            ProductInfo piCart = clothesCartPage.getProductInfo(i);
+            Assertions.assertEquals(piWomen[i].title, piCart.title, "Titles are not the same in product " + (i + 1));
+            Assertions.assertEquals(piWomen[i].price, piCart.price, "Prices are not the same in product " + (i + 1));
+        }
     }
- //   getProductInfo
-
 }
