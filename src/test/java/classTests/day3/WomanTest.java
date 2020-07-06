@@ -36,10 +36,10 @@ public class WomanTest extends BaseWebTest {
 
         LOGGER.info("initializing ItemSize page");
         ItemSizePage itemSizePage = new ItemSizePage(driver);
-//        LOGGER.info("clicking on size Selector");
-//        itemSizePage.clickSizeSelector();
-//        LOGGER.info("selecting size M");
-//        itemSizePage.clickSelectedSize();
+        LOGGER.info("clicking on size Selector");
+        itemSizePage.clickSizeSelector();
+        LOGGER.info("selecting size M");
+        itemSizePage.clickSelectedSize();
         LOGGER.info("adding item to cart");
         itemSizePage.clickAddToCart();
         LOGGER.info("clicking continue shopping");
@@ -51,10 +51,10 @@ public class WomanTest extends BaseWebTest {
         LOGGER.info("clicking on item printed Chiffon dress");
         itemPage.clickItemOne(6);
 
-//        LOGGER.info("clicking on size selector");
-//        itemSizePage.clickSizeSelector();
-//        LOGGER.info("selecting size M");
-//        itemSizePage.clickSelectedSize();
+        LOGGER.info("clicking on size selector");
+        itemSizePage.clickSizeSelector();
+        LOGGER.info("selecting size M");
+        itemSizePage.clickSelectedSize();
         LOGGER.info("adding item to cart");
         itemSizePage.clickAddToCart();
         LOGGER.info("clicking continue shopping");

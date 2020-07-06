@@ -14,7 +14,7 @@ import java.util.List;
 // This is Parent PageObject class should contains common methods which will be used for many PageObjects to prevent code duplication.
 public class BaseFunc {
 
-    private WebDriver driver;
+    public WebDriver driver;
     private WebDriverWait wait;
     private Alert alert;
     private Select select;

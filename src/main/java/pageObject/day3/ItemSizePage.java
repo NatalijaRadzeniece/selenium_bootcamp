@@ -24,12 +24,13 @@ public class ItemSizePage extends BaseFunc {
     private WebElement continueShopping;
 
     public void clickSizeSelector(){
-        waitElementAppeared(sizeSelector);
+        waitForTheElement(sizeSelector);
 
         sizeSelector.click();}
 
-    public void clickSelectedSize(){mySize.click();}
-
+    public void clickSelectedSize(){
+        waitForTheElement(mySize);
+        mySize.click();}
 
 
     public void clickAddToCart(){
@@ -37,7 +38,9 @@ public class ItemSizePage extends BaseFunc {
         addToCart.click();}
 
 
-    public void clickContinueShopping(){continueShopping.click();}
+    public void clickContinueShopping(){
+        waitForTheElement (continueShopping);
+        continueShopping.click();}
 
 
 

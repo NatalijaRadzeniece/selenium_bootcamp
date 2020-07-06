@@ -19,8 +19,9 @@ public class ItemPage extends BaseFunc {
     Item item;
 
 
-    @FindBy(how = How.XPATH, using = "//a[@class='product-name']")
+    @FindBy(how = How.XPATH, using = "//div[@class='right-block']")
     private List<WebElement> items;
+
 
     public void clickItemOne(int i) {
         waitForTheListOfElements(items);
@@ -31,17 +32,16 @@ public class ItemPage extends BaseFunc {
     public Item getMyItem(Integer i) {
         Item myItem = new Item();
         WebElement item = items.get(i);
-        List<WebElement> myItems = item.findElements(By.(".//a[text()='Blouse']"));
+        List<WebElement> myItems = item.findElements(By.xpath("//a[@class='product-name']"));
         item.click();
         return myItem;
     }
 
-    public Item getMyItem2(Integer i) {
-        Item myItem = new Item();
-        WebElement item = items.get(i);
-        List<WebElement> myItems = item.findElements(By.xpath(".//a[@title='Printed Chiffon Dress']"));
-        item.click();
-        return myItem;
-    }
+//    public Item getMyItem2(Integer i) {
+//        Item myItem = new Item();
+//        WebElement item = items.get(i);
+//        List<WebElement> myItems = item.findElements(By.xpath(".//a[@title='Printed Chiffon Dress']"));
+//        item.click();
+//        return myItem;
 }
 
