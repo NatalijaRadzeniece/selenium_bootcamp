@@ -15,7 +15,14 @@ public class YSHomePage extends BaseFunc {
     @FindBy(how = How.XPATH, using = "//a[contains(text(), 'Components')]")
     public WebElement componentsMenu;
 
+    @FindBy(how = How.XPATH, using = "//a[contains(text(), 'Monitors')]")
+    public WebElement monitorsButton;
+
     public void clickComponentsMenu() {
         componentsMenu.click();
+    }
+
+    public void clickMonitorsButton(){
+        monitorsButton.click();
     }
 }
