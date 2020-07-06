@@ -19,11 +19,12 @@ public class BaseFunc {
     private WebDriverWait wait;
     private Alert alert;
     private Select select;
+
     //day2  end
     public BaseFunc(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, 17);
     }
 
     public void acceptAlert() {
@@ -40,19 +41,24 @@ public class BaseFunc {
         alert = driver.switchTo().alert();
         alert.sendKeys("Meow");
     }
-//day2 stuff
-    public void selectByVisibletext(WebElement element, String optionName){
+
+    //day2 stuff
+    public void selectByVisibletext(WebElement element, String optionName) {
         select = new Select(element);
         select.selectByVisibleText(optionName);
     }
 
-    public void waitForTheListOfElements(List<WebElement> lists){
+    public void waitForTheListOfElements(List<WebElement> lists) {
         wait.until(ExpectedConditions.visibilityOfAllElements(lists));
     }
-    public void waitForTheWebElement(WebElement element){
+
+    public void waitForTheWebElement(WebElement element) {
         wait.until(ExpectedConditions.visibilityOfAllElements(element));
     }
 
+    public void waitElementAppeared(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
     // cant read file on input field
 //    public void waitForElementToBeClickable(WebElement element, String expectedText){
 //        wait.until(ExpectedConditions.textToBePresentInElement(element,expectedText));

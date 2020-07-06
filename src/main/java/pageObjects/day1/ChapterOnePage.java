@@ -54,9 +54,10 @@ public class ChapterOnePage extends BaseFunc {
 //        System.out.println(beginnersGuide.getCssValue("color"));
         return beginnersGuide.getCssValue("color");
     }
+
     //day2 select from DD
-    public void selectFromSelectTypeDD(String optionName){
-        selectByVisibletext(selectTypeDD, optionName );
-     //day2 end
+    public void selectFromSelectTypeDD(String optionName) {
+        selectByVisibletext(selectTypeDD, optionName);
+        //day2 end
     }
 }

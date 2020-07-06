@@ -28,7 +28,8 @@ public class LandingPage extends BaseFunc {
 
     @FindBy(how = How.XPATH, using = "//button[@onclick=\"cart.add('42', '2');\"]")
     private WebElement addCartBtn;
-    public void clickBtnAddCart(){
+
+    public void clickBtnAddCart() {
         addCartBtn.click();
     }
 
