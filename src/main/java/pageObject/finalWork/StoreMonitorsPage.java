@@ -1,4 +1,4 @@
-package pageObject.day2;
+package pageObject.finalWork;
 
 import core.BaseFunc;
 import org.apache.logging.log4j.LogManager;

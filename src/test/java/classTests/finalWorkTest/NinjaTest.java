@@ -1,12 +1,16 @@
-package classTests.day2;
+package classTests.finalWorkTest;
 
 import baseWebTest.BaseWebTest;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.day2.*;
+import pageObject.finalWork.*;
 
 public class NinjaTest extends BaseWebTest {
 
@@ -33,15 +37,15 @@ public class NinjaTest extends BaseWebTest {
         configurations.setSelect();
         configurations.setText();
 
-        configurations.upload();
+        WebElement element = driver.findElement(By.id("input-option222"));
+        String jse = "arguments[0].value='selenium task.png'";
+        ((JavascriptExecutor)driver).executeScript(jse, element);
 
-        WebDriverWait wait = new WebDriverWait(driver, 3000);
-        wait.until(ExpectedConditions.alertIsPresent());
-
-        AlertPage alertPage = new AlertPage(driver);
-        alertPage.acceptAlert();
+//        AlertPage alertPage = new AlertPage(driver);
+//        alertPage.acceptAlert();
 
         configurations.clickAddToCart();
+
 
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.checkoutConfig();

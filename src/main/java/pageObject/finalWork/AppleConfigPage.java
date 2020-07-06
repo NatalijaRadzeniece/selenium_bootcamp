@@ -1,4 +1,4 @@
-package pageObject.day2;
+package pageObject.finalWork;
 
 import core.BaseFunc;
 import org.apache.logging.log4j.LogManager;
@@ -32,7 +32,7 @@ public class AppleConfigPage extends BaseFunc {
     @FindBy(how = How.XPATH, using = "//input[@id='input-option208']")
     private WebElement text;
 
-    @FindBy(how = How.XPATH, using = "//option[contains(text(),'Red')]")
+    @FindBy(how = How.XPATH, using = "//option[contains(text(),'Green')]")
     private WebElement select;
 
     @FindBy(how = How.XPATH, using = "//textarea[@id='input-option209']")
@@ -64,6 +64,7 @@ public class AppleConfigPage extends BaseFunc {
 
 
     public void clickOnConfig() {
+        LOGGER.info("Add Checkboxes");
         waitElementAppeared(medium);
         medium.click();
         checkbox2.click();
@@ -73,6 +74,7 @@ public class AppleConfigPage extends BaseFunc {
     }
 
     public void setText() {
+        LOGGER.info("populate text,date,time,quantaty");
         text.clear();
         text.sendKeys("test");
         textarea2.clear();
@@ -89,45 +91,19 @@ public class AppleConfigPage extends BaseFunc {
     }
 
     public void setSelect() {
+        LOGGER.info("chosen green colour");
         select.click();
 
     }
 
 
-    public void upload() {
-        String filePath = System.getProperty("user.dir") + "\\src\\resources\\selenium task.png";
-        fileUpload.click();
-        StringSelection ss = new StringSelection(filePath);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-        Robot robot = null;
-        try {
-            robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.delay(250);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-            robot.delay(250);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.delay(250);
-            robot.keyPress(KeyEvent.VK_V);
-            robot.delay(250);
-            robot.keyRelease(KeyEvent.VK_V);
-            robot.delay(250);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            robot.delay(250);
-            robot.keyPress(KeyEvent.VK_ENTER);
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void clickAddToCart() {
+        LOGGER.info("final steps to check out");
         addCart.click();
         items.click();
         waitElementAppeared(checkout);
         checkout.click();
     }
-
 
 }
 

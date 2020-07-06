@@ -1,4 +1,4 @@
-package pageObject.day2;
+package pageObject.finalWork;
 
 import core.BaseFunc;
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +28,7 @@ public class OrderPlacesPage extends BaseFunc {
     }
 
     public String verifyEmptyCard() {
+        LOGGER.info("verify empy card");
         return emptyCard.getText();
     }
 

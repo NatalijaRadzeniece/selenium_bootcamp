@@ -1,4 +1,4 @@
-package pageObject.day2;
+package pageObject.finalWork;
 
 import core.BaseFunc;
 import org.apache.logging.log4j.LogManager;
@@ -74,6 +74,7 @@ public class CheckoutPage extends BaseFunc {
     }
 
     public void setPersonalDetails() {
+        LOGGER.info("populate persona details");
         waitElementAppeared(name);
         name.sendKeys("Raisa");
         lastname.sendKeys("Nazarova");
@@ -97,6 +98,7 @@ public class CheckoutPage extends BaseFunc {
     }
 
     public void paymentMethod() {
+        LOGGER.info("payment fields ");
         waitElementAppeared(checkAgree);
         checkAgree.click();
         buttonContinuePayment.click();
@@ -105,11 +107,4 @@ public class CheckoutPage extends BaseFunc {
 
 
     }
-
-
-//    public void setSelect() {
-//        country.click();
-
-
     }
-
