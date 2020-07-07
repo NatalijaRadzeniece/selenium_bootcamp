@@ -14,7 +14,7 @@ import java.io.File;
 
 public class OneATVPage extends BaseFunc {
 
-    final Logger logger = LogManager.getLogger(OneATVPage.class);
+    final Logger logger = LogManager.getLogger(getClass());
 
     public OneATVPage(WebDriver driver) {
         super(driver);

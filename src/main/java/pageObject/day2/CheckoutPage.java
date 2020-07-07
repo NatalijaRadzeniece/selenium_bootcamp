@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CheckoutPage extends BaseFunc {
 
-    final Logger logger = LogManager.getLogger(OneATVPage.class);
+    final Logger logger = LogManager.getLogger(getClass());
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -24,10 +24,11 @@ public class CheckoutPage extends BaseFunc {
         driver.findElement(By.xpath("//div[@class='col-sm-6']//input[@value='guest']")).click();
 
         logger.info("Clicking Continue button");
+        logger.info("P. S. This was the last log entry, because we are tired already");
         driver.findElement(By.id("button-account")).click();
     }
 
-    public void populatingBillingDetails() throws InterruptedException {
+    public void populatingBillingDetails() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button-guest")));
         driver.findElement(By.id("input-payment-firstname")).sendKeys("Egils");
         driver.findElement(By.id("input-payment-lastname")).sendKeys("Levits");

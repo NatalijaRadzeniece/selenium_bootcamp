@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import pageObject.day2.*;
 
 public class TutorialsNinjaTest extends BaseWebTest {
-    final Logger logger = LogManager.getLogger(TutorialsNinjaTest.class);
+    final Logger logger = LogManager.getLogger(getClass());
 
     @BeforeClass
     public void navigateTo() {
