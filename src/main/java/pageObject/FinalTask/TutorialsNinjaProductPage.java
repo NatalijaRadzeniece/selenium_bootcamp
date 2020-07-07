@@ -1,4 +1,4 @@
-package pageObject.Day2;
+package pageObject.FinalTask;
 
 import core.BaseFunc;
 import org.openqa.selenium.JavascriptExecutor;

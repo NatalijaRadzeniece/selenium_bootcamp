@@ -49,12 +49,12 @@
       <module name="selenium_bootcamp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pageObject.Day2.*" />
+          <option name="PATTERN" value="pageObject.FinalTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="classTests.day2" />
-      <option name="MAIN_CLASS_NAME" value="classTests.day2.TutorialsNinjaTest" />
+      <option name="MAIN_CLASS_NAME" value="finalTask.TutorialsNinjaTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -98,16 +98,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TutorialsNinjaTest.checkingNinja (3)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TutorialsNinjaTest.checkingNinja" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium_bootcamp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="classTests.day2.*" />
+          <option name="PATTERN" value="pageObject.FinalTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="classTests.day2" />
-      <option name="MAIN_CLASS_NAME" value="classTests.day2.TutorialsNinjaTest" />
+      <option name="MAIN_CLASS_NAME" value="finalTask.TutorialsNinjaTest" />
       <option name="METHOD_NAME" value="checkingNinja" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -120,12 +120,48 @@
       <module name="selenium_bootcamp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pageObject.Day2.*" />
+          <option name="PATTERN" value="finalTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="classTests.day2" />
-      <option name="MAIN_CLASS_NAME" value="classTests.day2.TutorialsNinjaTest" />
+      <option name="MAIN_CLASS_NAME" value="finalTask.TutorialsNinjaTest" />
+      <option name="METHOD_NAME" value="checkingNinja" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TutorialsNinjaTest.checkingNinja" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finalTask.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.day2" />
+      <option name="MAIN_CLASS_NAME" value="finalTask.TutorialsNinjaTest" />
+      <option name="METHOD_NAME" value="checkingNinja" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TutorialsNinjaTest.checkingNinja" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium_bootcamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finalTask.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="classTests.day2" />
+      <option name="MAIN_CLASS_NAME" value="finalTask.TutorialsNinjaTest" />
       <option name="METHOD_NAME" value="checkingNinja" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />

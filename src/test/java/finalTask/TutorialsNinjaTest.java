@@ -1,4 +1,4 @@
-package classTests.day2;
+package finalTask;
 
 import baseWebTest.BaseWebTest;
 import org.apache.logging.log4j.LogManager;
@@ -6,10 +6,10 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObject.Day2.TutorialsNinjaPurchaseFinalPage;
-import pageObject.Day2.TutorialsNinjaHeader;
-import pageObject.Day2.TutorialsNinjaPurchasePage;
-import pageObject.Day2.TutorialsNinjaProductPage;
+import pageObject.FinalTask.TutorialsNinjaPurchaseFinalPage;
+import pageObject.FinalTask.TutorialsNinjaHeader;
+import pageObject.FinalTask.TutorialsNinjaPurchasePage;
+import pageObject.FinalTask.TutorialsNinjaProductPage;
 
 import java.util.Map;
 
