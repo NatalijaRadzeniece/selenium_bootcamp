@@ -2,6 +2,7 @@ package Day3;
 
 import baseWebTest.BaseWebTest;
 import classTests.Day2.AlertTest;
+import model.Article;
 import model.AutomationPageM;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,8 +25,10 @@ public class AutomationPageTest extends BaseWebTest {
         AutomationPage webstore = new AutomationPage(driver);
         webstore.clickOnButtonWomen();
 
-        SecondAutomationPage productSecondPage = new SecondAutomationPage(driver);
-        AutomationPageM product = productSecondPage.getProductTitleAndPrice(1);
+    SecondAutomationPage productSecondPage = new SecondAutomationPage(driver);
+//        productSecondPage.clickTitle(0);
+
+        AutomationPageM productOne = productSecondPage.getProductTitleAndPrice(5);
 
 //        SecondAutomationPage secondPage = new SecondAutomationPage(driver);
 //        secondPage.clickOnShirt();

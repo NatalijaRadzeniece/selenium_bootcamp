@@ -20,7 +20,10 @@ public class AutomationPageM {
     public void setPrice(Double price) {
         this.price = price;
     }
-
+    public void setPrice (String price){
+        String clearPrice = price.substring(1, price.length());
+        this.price = Double.valueOf(clearPrice);
+    }
 
 
 

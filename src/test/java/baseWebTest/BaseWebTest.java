@@ -32,10 +32,10 @@ public class BaseWebTest {
     }
 
     //Annotation @AfterClass will be run after each test class which extends this class
-    @AfterClass
-    public void closeBrowser() {
-        Assertions.assertNotNull(driver, "Window already closed");
-        driver.quit();
-    }
+//    @AfterClass
+//    public void closeBrowser() {
+//        Assertions.assertNotNull(driver, "Window already closed");
+//        driver.quit();
+//    }
 
 }
