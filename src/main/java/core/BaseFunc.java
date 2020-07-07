@@ -38,7 +38,7 @@ public class BaseFunc {
         alert.sendKeys("Meow");
     }
 
-    public void selectByVisibleText(WebElement element, String optionName){
+    public void selectByVisibleText(WebElement element, String optionName) {
         select = new Select(element);
         select.selectByVisibleText(optionName);
     }
@@ -46,10 +46,12 @@ public class BaseFunc {
     public void waitForElementToBeClickable(WebElement element, String expectedTest) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, expectedTest));
     }
-    public void waitForVisibilityOfElement(WebElement element){
+
+    public void waitForVisibilityOfElement(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-    public void waitElementAppeared(WebElement element){
+
+    public void waitElementAppeared(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
