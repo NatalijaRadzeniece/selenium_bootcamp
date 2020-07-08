@@ -22,10 +22,12 @@ public class Test_WomanActivity extends BaseWebTest {
     @Test
     public void Test_WomanActivity() throws InterruptedException {
         HomePage HomePage = new HomePage(driver);
+        LOGGER.info("Going on Woman Page");
         HomePage.clickingOnWoman();
         Thread.sleep(3000);
         WomenPage WomenPage = new WomenPage(driver);
         WomenPage.clickOnPic();
+        LOGGER.info("Clicking on Product");
         Thread.sleep(3000);
 
         BuyShirt BuyShirt = new BuyShirt(driver);
