@@ -11,7 +11,10 @@ public class NinjaMonitorsPage extends BaseFunc {
         super(driver);
     }
 
-    @FindBy(how = How.CSS, using = "[onclick=\"cart.add('42', '2');\"]")
+    /*@FindBy(how = How.CSS, using = "[onclick=\"cart.add('42', '2');\"]")
+    private WebElement addToCart;*/
+
+    @FindBy(how = How.CSS, using = "a[href=\"http://tutorialsninja.com/demo/index.php?route=product/product&path=25_28&product_id=33\"]")
     private WebElement addToCart;
 
     public void clickOnAddToCart() {

@@ -1,9 +1,7 @@
 package pageObject.day2.PROJECT;
 
 import core.BaseFunc;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,8 +26,8 @@ public class NinjaApplePage extends BaseFunc {
     private WebElement selectDropdown;
     @FindBy(how = How.CSS, using = "textarea[placeholder=\"Textarea\"]")
     private WebElement textArea;
-    @FindBy(how = How.CSS, using = "button[class=\"btn btn-default btn-block\"]")
-    private WebElement fileUpload;
+    //@FindBy(how = How.CSS, using = "button[class=\"btn btn-default btn-block\"]")
+    //private WebElement fileUpload;
     @FindBy(how = How.CSS, using = "div[class=\"input-group date\"] button[class=\"btn btn-default\"]")
     private WebElement date;
     @FindBy(how = How.CSS, using = "div[class=\"input-group time\"] button[class=\"btn btn-default\"]")
@@ -38,9 +36,9 @@ public class NinjaApplePage extends BaseFunc {
     private WebElement dateAndTime;
     @FindBy(how = How.CSS, using = "#button-cart")
     private WebElement addToCartButton;
-    @FindBy(how = How.CSS, using = "#cart-total")
+    @FindBy(how = How.CSS, using = "#cart .dropdown-toggle")
     private WebElement cartButton;
-    @FindBy(how = How.CSS, using = "a[href=\"http://tutorialsninja.com/demo/index.php?route=checkout/checkout\"]")
+    @FindBy(how = How.CSS, using = "#cart a[href=\"http://tutorialsninja.com/demo/index.php?route=checkout/checkout\"]")
     private WebElement checkoutButton;
 
     public NinjaApplePage(WebDriver driver) {
@@ -79,37 +77,47 @@ public class NinjaApplePage extends BaseFunc {
     }
 
 
-    public void clickFileUpload() {
-        //fileUpload.click();
-        String filePath = System.getProperty("user.dir") + "\\src\\resources\\squid.jpg";
-        fileUpload.click();
+//    public void clickFileUpload() {
+//
+//        String filePath = System.getProperty("user.dir") + "\\src\\resources\\squid.jpg";
+//        fileUpload.click();
 
         //put path to your image in a clipboard
-        StringSelection ss = new StringSelection(filePath);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+        //StringSelection ss = new StringSelection(filePath);
+        //Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
         //imitate mouse events like ENTER, CTRL+C, CTRL+V
-        try {
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-        } catch (AWTException e) {
-            e.printStackTrace();
+//        try {
+//            Robot robot = new Robot();
+//            robot.keyPress(KeyEvent.VK_ENTER);
+//            robot.keyRelease(KeyEvent.VK_ENTER);
+//            robot.keyPress(KeyEvent.VK_CONTROL);
+//            robot.keyPress(KeyEvent.VK_V);
+//            robot.keyRelease(KeyEvent.VK_V);
+//            robot.keyRelease(KeyEvent.VK_CONTROL);
+//            robot.keyPress(KeyEvent.VK_ENTER);
+//            robot.keyRelease(KeyEvent.VK_ENTER);
+//        } catch (AWTException e) {
+//            e.printStackTrace();
+ //      }
+        @FindBy(how = How.ID, using = "input-option222")
+        private WebElement fileInput;
+
+
+        @FindBy(how = How.ID, using = "button-upload222")
+        private WebElement fileUpload;
+
+        public void setFile() {
+            String path = System.getProperty("user.dir") + "src\\resources\\squid.jpg";
+            //WebElement element = driver.findElement(By.id("input-option222"));
+
+            String jse = "arguments[0].value='squid.jpg'";
+            ((JavascriptExecutor)driver).executeScript(jse, fileInput);
+            fileUpload.sendKeys("C:\\Users\\Janis\\Desktop\\Aija\\AutomationTesting\\selenium_bootcamp\\src\\resources\\squid.jpg");
         }
 
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.alertIsPresent());
 
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
 
-    }
 
 
     public void selectDate() {
@@ -142,6 +150,8 @@ public class NinjaApplePage extends BaseFunc {
     }
 
     public void clickCheckoutButton() {
+        waitElementAppeared(checkoutButton);
+
         checkoutButton.click();
     }
 }
