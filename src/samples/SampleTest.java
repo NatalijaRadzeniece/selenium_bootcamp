@@ -14,6 +14,7 @@ public class SampleTest extends BaseWebTest {
     //in this case we navigating to website
     @BeforeClass
     public void defineDriver() {
+
         navigateTo("url to website");
     }
 
