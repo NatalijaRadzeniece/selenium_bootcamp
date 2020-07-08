@@ -19,23 +19,34 @@ public class ItemPage extends BaseFunc {
     Item item;
 
 
-    @FindBy(how = How.XPATH, using = "//div[@class='right-block']")
+    @FindBy(how = How.XPATH, using = "//div[@class='product-container']")
     private List<WebElement> items;
 
+    @FindBy(how = How.XPATH, using = "//div[@class='button-container']")
+    private WebElement buttonContainer;
 
-    public void clickItemOne(int i) {
+
+    public void clickOnItem(int i) {
         waitForTheListOfElements(items);
-
+        WebElement item = items.get(i);
+        item.findElement(By.xpath(".//img[@class='replace-2x img-responsive'']"));
+        waitElementAppeared(item);
         items.get(i).click();
     }
 
-    public Item getMyItem(Integer i) {
-        Item myItem = new Item();
-        WebElement item = items.get(i);
-        List<WebElement> myItems = item.findElements(By.xpath("//a[@class='product-name']"));
-        item.click();
-        return myItem;
-    }
+//    public void clickOnMore(){
+//        waitElementAppeared(buttonContainer);
+//        buttonContainer.findElement(By.xpath(".//span[text()='More']")).click();
+//    }
+
+//    public Item getMyItem(Integer i) {
+//        waitForTheListOfElements(items);
+//        Item myItem = new Item();
+//        WebElement item = items.get(i);
+//        List<WebElement> myItems = item.findElements(By.xpath("//span[contains(text(),'More')]"));
+//        item.click(i);
+//        return myItem;
+//    }
 
 //    public Item getMyItem2(Integer i) {
 //        Item myItem = new Item();

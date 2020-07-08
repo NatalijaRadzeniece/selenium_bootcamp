@@ -22,7 +22,7 @@ public class WomanTest extends BaseWebTest {
     }
 
     @Test
-    public void testWomenButtonClick() {
+    public void womenItemTest() {
 
         LOGGER.info("initializing Woman page");
         WomanPage womanPage = new WomanPage(driver);
@@ -31,15 +31,15 @@ public class WomanTest extends BaseWebTest {
 
         LOGGER.info("initializing Item page");
         ItemPage itemPage = new ItemPage(driver);
-        LOGGER.info("clicking on item blouse");
-        itemPage.clickItemOne(1);
+        LOGGER.info("click on item blouse");
+        itemPage.clickOnItem(1);
+//        LOGGER.info("click on more");
+//        itemPage.clickOnMore();
 
         LOGGER.info("initializing ItemSize page");
         ItemSizePage itemSizePage = new ItemSizePage(driver);
-        LOGGER.info("clicking on size Selector");
-        itemSizePage.clickSizeSelector();
-        LOGGER.info("selecting size M");
-        itemSizePage.clickSelectedSize();
+        LOGGER.info("Selecting size");
+        itemSizePage.selectSize("2");
         LOGGER.info("adding item to cart");
         itemSizePage.clickAddToCart();
         LOGGER.info("clicking continue shopping");
@@ -49,12 +49,10 @@ public class WomanTest extends BaseWebTest {
         womanPage.clickWomenButton();
 
         LOGGER.info("clicking on item printed Chiffon dress");
-        itemPage.clickItemOne(6);
+        itemPage.clickOnItem(6);
 
-        LOGGER.info("clicking on size selector");
-        itemSizePage.clickSizeSelector();
         LOGGER.info("selecting size M");
-        itemSizePage.clickSelectedSize();
+        itemSizePage.selectSize("2");
         LOGGER.info("adding item to cart");
         itemSizePage.clickAddToCart();
         LOGGER.info("clicking continue shopping");
@@ -66,9 +64,9 @@ public class WomanTest extends BaseWebTest {
         LOGGER.info("initializing Item cart page");
         ItemCartPage itemCartPage = new ItemCartPage(driver);
 
-        LOGGER.info("checking if name of each object matches");
-        Assertions.assertEquals(itemCartPage.getProductOneName(1), "Printed Chiffon Dress");
-        Assertions.assertEquals(itemCartPage.getProductTwoName(2), "Blouse");
+//        LOGGER.info("checking if name of each object matches");
+//        Assertions.assertEquals(itemCartPage.getProductOneName(1), "Printed Chiffon Dress");
+//        Assertions.assertEquals(itemCartPage.getProductTwoName(2), "Blouse");
 
         LOGGER.info("check item count in cart");
         Assertions.assertEquals(itemCartPage.getProductQuantity(), "2 Products");

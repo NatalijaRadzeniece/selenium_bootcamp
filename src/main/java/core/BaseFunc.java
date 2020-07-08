@@ -1,6 +1,7 @@
 package core;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -55,6 +56,9 @@ public class BaseFunc {
     }
     public void waitForTheElement(WebElement element){
         wait.until(ExpectedConditions.visibilityOfAllElements(element));
+    }
+    public void waitForTheElementToBeClickable2 (WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 }

@@ -18,7 +18,7 @@ public class MonitorTest extends BaseWebTest {
     }
 
     @Test
-    public void testMonitorsButtonClick() throws InterruptedException {
+    public void monitorTest() throws InterruptedException {
         LOGGER.info("initializing Main page");
         MainPage mainPage = new MainPage(driver);
         LOGGER.info("click on Components drop down menu");
